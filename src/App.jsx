@@ -1,10 +1,8 @@
-
+import Router from "./components/Router";
 function App() {
   return (
     <>
-<h1>it works
-
-</h1>
+<Router/>
     </>
   );
 }
