@@ -10,7 +10,12 @@ function Router(){
         <>
 <BrowserRouter>
 <Routes>
-    <Route path="/" element={<Layout><Lessonpage/></Layout>}/>
+    <Route path="/lessons" element={<Layout><Lessonpage/></Layout>}/>
+    <Route path="/admin" element={<Layout><Adminpannel/></Layout>}/>
+    <Route path="/login&r" element={<Layout><Authentications/></Layout>}/>
+    <Route path="/landing" element={<Layout><Landingpage/></Layout>}/>
+    <Route path="/paid" element={<Layout><Payment/></Layout>}/>
+   
 </Routes>
 </BrowserRouter>
 
