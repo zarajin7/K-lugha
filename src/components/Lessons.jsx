@@ -1,9 +1,13 @@
+
+
+
 function Lessons(){
     return(
         <>
         <div className="flex grid grid-cols-3 gap-4 ">
         <div className="w-[350px] m-[30px] rounded-lg px-[40px] bg-gradient-to-r from-neutral-950 via-red-950 to-green-950 h-[350px]">
-            <div></div>
+            <div>
+</div>
         <div className="flex">
             <img className="my-8 h-[250px]" src="images/luo1.jpeg"></img>
         </div>
@@ -96,7 +100,7 @@ function Lessons(){
                 </div>
             <button className="border bg-black text-white align-middle justify-center text-center outline-none rounded-lg p-3 border-black">Learn Now</button>
             </div>
-           
+          
 
         </div>
 
