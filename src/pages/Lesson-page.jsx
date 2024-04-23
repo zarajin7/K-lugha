@@ -1,6 +1,10 @@
+import Lessons from "../components/Lessons"
+
 function Lessonpage(){
     return(
-        <h1>we good</h1>
+      <div  >
+<Lessons/>
+      </div>
     )
 }
 
