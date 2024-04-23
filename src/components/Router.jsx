@@ -5,6 +5,7 @@ import Adminpannel from "../pages/Adminpannel"
 import Authentications from "../pages/Authentications"
 import Landingpage from "../pages/Landingpage"
 import Payment from "../pages/Paymentpage"
+import Admindash from "../pages/Admindash"
 function Router(){
     return(
         <>
@@ -15,6 +16,7 @@ function Router(){
     <Route path="/login&r" element={<Layout><Authentications/></Layout>}/>
     <Route path="/" element={<Layout><Landingpage/></Layout>}/>
     <Route path="/paid" element={<Layout><Payment/></Layout>}/>
+    <Route path="/dash" element={<Layout><Admindash/></Layout>}/>
    
 </Routes>
 </BrowserRouter>
