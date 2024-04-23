@@ -16,7 +16,7 @@ function Router(){
     <Route path="/login&r" element={<Layout><Authentications/></Layout>}/>
     <Route path="/" element={<Layout><Landingpage/></Layout>}/>
     <Route path="/paid" element={<Layout><Payment/></Layout>}/>
-    <Route path="/dash" element={<Layout><Admindash/></Layout>}/>
+    <Route path="/dash" element={<Admindash/>}/>
    
 </Routes>
 </BrowserRouter>
