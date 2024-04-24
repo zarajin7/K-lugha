@@ -1,12 +1,13 @@
 import { IoLanguageSharp } from "react-icons/io5";
 
-function Lesson(){
+function Lessonkamba(){
     return(
+        <div>
         <div className="text-center mx-auto border ">
 <div className="text-2xl font-semibold ">
-<h1>Learn the luo language</h1>
+<h1>Learn the kamba language</h1>
 </div>
-<p>There are up to five basics things you will learn bedgi hawi maber!</p> 
+<p>There are up to five basics things you will learn etha na vaati!</p> 
   
 <div className="border mx-28 bg-slate-500">
   <h2>Lesson 1:Introduction</h2>
@@ -77,9 +78,8 @@ function Lesson(){
   <div>@9</div>
   <div>@10</div>
   </div>
-
-</div>
+        </div>
+        </div>
     )
 } 
-
-export default Lesson
+export default Lessonkamba

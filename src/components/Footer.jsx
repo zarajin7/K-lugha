@@ -7,7 +7,7 @@ function Footer(){
             <div className="container  bg-gradient-to-r from-neutral-950 via-red-950 to-green-950  text-white">
             <div className="flex justify-evenly items-center mt-10 flex-col sm:flex-row">
     <div>
-        <img  className="img w-[20%]" src="images/logo-removebg-preview.png"></img>
+        <img  className="img w-[20%]" src="images/k-lrn-removebg-preview.png"></img>
 <p>Learn kenyan languages <br></br>with us and have a great <br></br> experience Enjoy!  </p>
     </div>
 

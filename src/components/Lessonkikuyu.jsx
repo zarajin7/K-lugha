@@ -1,12 +1,13 @@
 import { IoLanguageSharp } from "react-icons/io5";
 
-function Lesson(){
+function Lessonkikuyu(){
     return(
-        <div className="text-center mx-auto border ">
+        
+                    <div className="text-center mx-auto border ">
 <div className="text-2xl font-semibold ">
-<h1>Learn the luo language</h1>
+<h1>Learn the kikuyu language</h1>
 </div>
-<p>There are up to five basics things you will learn bedgi hawi maber!</p> 
+<p>There are up to five basics things you will learn nĩwega!</p> 
   
 <div className="border mx-28 bg-slate-500">
   <h2>Lesson 1:Introduction</h2>
@@ -22,7 +23,7 @@ function Lesson(){
   <div>@10</div>
   </div>
 
-<div className="border mx-28 bg-slate-500">
+<div className="border mx-28 bg-slate-500" >
   <h2>Lesson 2:basics</h2>
   <div>@1</div>
   <div>@2</div>
@@ -77,9 +78,8 @@ function Lesson(){
   <div>@9</div>
   <div>@10</div>
   </div>
-
-</div>
+        </div>
     )
-} 
+}
 
-export default Lesson
+export default Lessonkikuyu
