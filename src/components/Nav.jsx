@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom"
+
 function Nav(){
     return(
         <>
@@ -5,9 +7,9 @@ function Nav(){
            
             <ul className="flex flex-row gap-5 items center">
             <li><img className="img w-[20%]" src="images/logo-removebg-preview.png"></img></li>
-                <li>Home</li>
+            <Link to="/"><li>Home</li></Link>
                 <li>Login</li>
-                <li>Language-Categories</li>
+                <Link to="/lessons"><li>Language-Categories</li></Link>
                 <li>Lessons</li>
             </ul>
         </div>
