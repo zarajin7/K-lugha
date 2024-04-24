@@ -1,41 +1,147 @@
 import { useState } from "react";
 import { IoPersonSharp } from "react-icons/io5";
-import { auth } from "../firebase";
-import { confirmPasswordReset, createUserWithEmailAndPassword } from "firebase/auth";
+import { auth,db } from "../firebase";
+import {
+  createUserWithEmailAndPassword,signInWithEmailAndPassword
+} from "firebase/auth";
+import { collection, addDoc } from "firebase/firestore"; 
 
 function Authentication() {
   const [showForm, setShowForm] = useState("signup");
+  const [showError, setShowError] = useState("");
+  const [formDataSignUp, setFormDataSignUp] = useState({
+    fullName: "",
+    email: "",
+    password: "",
+  });
+  
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   function toggleForm(formName) {
     setShowForm(formName);
   }
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [fullName, setFullName] = useState("");
-  const [formDataSignUp, setFormDataSignUp] = useState({});
-
-  function handleChange(e){
-setFormDataSignUp(prev=>({}))
+  function handleChange(e) {
+    setFormDataSignUp({ ...formDataSignUp, [e.target.name]: e.target.value });
   }
+  
 
   const handleSubmit = async (e) => {
-    await createUserWithEmailAndPassword(auth, email, password,confirmPasswordReset)
-      .then((userCredential) => {
-        // Signed up
+    e.preventDefault();
+    setShowError("")
+
+    console.log(confirmPassword);
+
+    if (formDataSignUp.fullName === "") {
+      setShowError("kindly fill in your name");
+    } else if (formDataSignUp.email === "") {
+      setShowError("kindly fill in the email address");
+    } else if (formDataSignUp.password === "") {
+      setShowError("kindly fill in the password");
+    } else if (confirmPassword === "") {
+      setShowError("kindly confirm your password");
+    } else if (confirmPassword !== formDataSignUp.password) {
+      setShowError("Passwords do not match");
+    } 
+    else if(formDataSignUp.password.length<6){
+      setShowError("password should have at least 6 characters")
+    }
+    else {
+      await createUserWithEmailAndPassword(
+        auth,
+        formDataSignUp.email,
+        formDataSignUp.password
+      )
+        .then(async(userCredential) => {
+          // Signed up
+          const user = userCredential.user;
+          console.log("Registered successfully");
+          console.log(user);
+          if (user){
+            const saveUsers=await addDoc(collection(db, "users"), formDataSignUp)
+            console.log(saveUsers)
+          }
+          setShowForm("login");
+          // ...
+        })
+        .catch((error) => {
+         console.log(error)
+
+          // ..
+        });
+
+        
+      
+        
+
+        
+     
+             }
+    }
+
+
+
+
+const[formDataSignIn,setFormDataSignIn]=useState({
+  email: "",
+  password: "",
+})
+
+function handleChangeNow(e) {
+  setFormDataSignIn({ ...formDataSignIn, [e.target.name]: e.target.value });
+}
+
+const handleLogin = async (e) => {
+  e.preventDefault();
+  setShowError("")
+
+  console.log(confirmPassword);
+
+  if (formDataSignIn.email === "") {
+    setShowError("kindly fill in the email address");
+  } else if (formDataSignIn.password === "") {
+    setShowError("kindly fill in the password");
+  } 
+  
+  else if(formDataSignIn.password.length<6){
+    setShowError("password should have at least 6 characters")
+  }
+  else {
+    await signInWithEmailAndPassword(
+      auth,
+      formDataSignIn.email,
+      formDataSignIn.password
+    )
+      .then(async(userCredential) => {
+        // Signed in
         const user = userCredential.user;
-        console.log("Registered successfully");
+        console.log("Logged in successfully");
         console.log(user);
+        // if (user){
+        //   const saveUsers=await addDoc(collection(db, "users"), formDataSignUp)
+        //   console.log(saveUsers)
+        // }
+        setShowForm("login");
         // ...
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
+       console.log(error)
 
         // ..
       });
-  };
 
+      
+    
+      
+
+      
+   
+           }
+  }
+
+
+
+  
   return (
     <>
       <div className="container mx-auto">
@@ -62,7 +168,7 @@ setFormDataSignUp(prev=>({}))
           </p>
         </div>
 
-        <div className="bg-red-300">
+        <div className="bg-gray-300">
           {showForm === "signup" ? (
             <div className=" bg-white box-boder shadow-lg p-[50px] rounded-xl ">
               <div className="flex">
@@ -79,19 +185,16 @@ setFormDataSignUp(prev=>({}))
                       placeholder="Full Name"
                       className=" py-5 pr-[20em] px-2 bg-transparent outline-none flex-1 "
                       name="fullName"
-                      value={fullName}
-                      onChange={(e) => setFullName(e.target.value)}
+                      onChange={(e) => handleChange(e)}
                     />
-                  
                   </div>
                   <div className="border-2  rounded-lg w-full shadow-lg">
                     <input
                       type="text"
                       placeholder="Email"
                       className=" py-5 pr-[20em] px-2 bg-transparent outline-none flex-1 "
-                      name="Email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
+                      name="email"
+                      onChange={(e) => handleChange(e)}
                     />
                   </div>
 
@@ -100,30 +203,27 @@ setFormDataSignUp(prev=>({}))
                       type="text"
                       placeholder="password"
                       className=" py-5 pr-[20em] px-2 bg-transparent outline-none flex-1 "
-                      name="Password"
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
+                      name="password"
+                      onChange={(e) => handleChange(e)}
                     />
                   </div>
                   <div className="border-2  rounded-lg w-full shadow-lg">
                     <input
                       type="text"
-                      placeholder="Confirm Passsword"
+                      placeholder="confirmPasssword"
                       className=" py-5 pr-[20em] px-2 bg-transparent outline-none flex-1 "
-                      name="Confirm Password"
-                      value={confirmPasswordReset}
-                      onChange={(e) => setconfirmPasswordReset(e.target.value)}
-
+                      name="confirmPassword"
+                      onChange={(e) => setConfirmPassword(e.target.value)}
                     />
                   </div>
+                  <p className="text-red-400">{showError}</p>
                   <div className="flex justify-center ">
-                    <a
-                      href="/login"
+                    <button
                       className="bg-red-300 px-[5em] py-5 rounded-[2em] shadow-lg text-white font-bold"
-                      onClick={handleSubmit}
+                      onClick={(e) => handleSubmit(e)}
                     >
-                      sign up
-                    </a>
+                      Sign Up
+                    </button>
                   </div>
                   <div className="flex justify-center text-[25px]">
                     Already Have An Account{" "}
@@ -141,6 +241,8 @@ setFormDataSignUp(prev=>({}))
                   type="text"
                   placeholder="Email"
                   className=" py-5 pr-[20em] px-2 bg-transparent outline-none flex-1 "
+                  name="email"
+                  onChange={(e) => handleChangeNow(e)}
                 />
               </div>
               <div className="border-2  rounded-lg  shadow-lg flex">
@@ -148,6 +250,8 @@ setFormDataSignUp(prev=>({}))
                   type="text"
                   placeholder="password"
                   className=" py-5 pr-[20em] px-2 bg-transparent outline-none flex-1 "
+                  name="password"
+                  onChange={(e) => handleChangeNow(e)}
                 />
               </div>
               <div className="flex justify-between">
@@ -159,13 +263,17 @@ setFormDataSignUp(prev=>({}))
                   Forgot Password?
                 </p>
               </div>
+              <p className="text-red-400">{showError}</p>
+
               <div className="flex justify-center ">
-                <a
+                <button
                   href="#"
                   className="bg-red-300 px-[7em] py-5 rounded-[2em] shadow-lg text-white font-bold"
+                  onClick={(e) => handleLogin(e)}
+
                 >
                   Log in
-                </a>
+                </button>
               </div>
 
               <div className="flex justify-center  text-[20px] my-2">
@@ -179,7 +287,8 @@ setFormDataSignUp(prev=>({}))
         </div>
       </div>
     </>
+  
   );
-}
 
+          }
 export default Authentication;
