@@ -1,4 +1,4 @@
-import { IoLanguageSharp } from "react-icons/io5";
+
 
 function Lessonkikuyu(){
     return(

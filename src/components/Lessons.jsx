@@ -1,4 +1,4 @@
-
+import { Link } from 'react-router-dom'
 
 
 function Lessons(){
@@ -15,7 +15,7 @@ function Lessons(){
             <div className="text-white justify-center align-middle text-center font-bold text-[30px]">
                 <h3>Luo</h3>
                 </div>
-            <button className="border bg-black text-white align-middle justify-center text-center outline-none rounded-lg p-3 border-black hover:bg-orange-700">Learn Now</button>
+                <Link to="/lesson"><button className="border bg-black text-white align-middle justify-center text-center outline-none rounded-lg p-3 border-black hover:bg-orange-700">Learn Now</button></Link>
             </div>
            
 
@@ -31,7 +31,7 @@ function Lessons(){
             <div className="text-white justify-center align-middle text-center font-bold text-[30px]">
                 <h3>Akamba</h3>
                 </div>
-            <button className="border bg-black text-white align-middle justify-center text-center outline-none rounded-lg p-3 border-black hover:bg-orange-700">Learn Now</button>
+                <Link to="/lessonss"> <button className="border bg-black text-white align-middle justify-center text-center outline-none rounded-lg p-3 border-black hover:bg-orange-700">Learn Now</button></Link>
             </div>
            
 
@@ -47,7 +47,7 @@ function Lessons(){
             <div className="text-white justify-center align-middle text-center font-bold text-[30px]">
                 <h3>Kikuyu</h3>
                 </div>
-            <button className="border bg-black text-white align-middle justify-center text-center outline-none rounded-lg p-3 border-black hover:bg-orange-700">Learn Now</button>
+                <Link to="/lesso"><button className="border bg-black text-white align-middle justify-center text-center outline-none rounded-lg p-3 border-black hover:bg-orange-700">Learn Now</button></Link>
             </div>
            
 
@@ -64,7 +64,7 @@ function Lessons(){
             <div className="text-white justify-center align-middle text-center font-bold text-[30px]">
                 <h3>Kisii</h3>
                 </div>
-            <button className="border bg-black text-white align-middle justify-center text-center outline-none rounded-lg p-3 border-black hover:bg-orange-700">Learn Now</button>
+                <Link to="/less"><button className="border bg-black text-white align-middle justify-center text-center outline-none rounded-lg p-3 border-black hover:bg-orange-700">Learn Now</button></Link>
             </div>
            
 
@@ -81,7 +81,7 @@ function Lessons(){
             <div className="text-white justify-center align-middle text-center font-bold text-[30px]">
                 <h3>Nubian</h3>
                 </div>
-            <button className="border bg-black text-white align-middle justify-center text-center outline-none rounded-lg p-3 border-black hover:bg-orange-700">Learn Now</button>
+                <Link to="/les"><button className="border bg-black text-white align-middle justify-center text-center outline-none rounded-lg p-3 border-black hover:bg-orange-700">Learn Now</button></Link>
             </div>
            
 
@@ -98,7 +98,7 @@ function Lessons(){
             <div className="text-white justify-center align-middle text-center font-bold text-[30px]">
                 <h3>Masai</h3>
                 </div>
-            <button className="border bg-black text-white align-middle justify-center text-center outline-none rounded-lg p-3 border-black hover:bg-orange-700">Learn Now</button>
+                <Link to="/len"><button className="border bg-black text-white align-middle justify-center text-center outline-none rounded-lg p-3 border-black hover:bg-orange-700">Learn Now</button></Link>
             </div>
           
 

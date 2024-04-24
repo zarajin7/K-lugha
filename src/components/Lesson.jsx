@@ -1,4 +1,4 @@
-import { IoLanguageSharp } from "react-icons/io5";
+
 
 function Lesson(){
     return(
@@ -10,6 +10,7 @@ function Lesson(){
   
 <div className="border mx-28 bg-slate-500">
   <h2>Lesson 1:Introduction</h2>
+
   <div>@1</div>
   <div>@2</div>
   <div>@3</div>
