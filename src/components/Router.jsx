@@ -5,6 +5,12 @@ import Adminpannel from "../pages/Adminpannel"
 import Authentications from "../pages/Authentications"
 import Landingpage from "../pages/Landingpage"
 import Payment from "../pages/Paymentpage"
+import Lesson from "./Lesson"
+import Lessonkamba from "./Lessonkamba"
+import Lessonnubian from "./Lessonnubian"
+import Lessonkikuyu from "./Lessonkikuyu"
+import Lessonkisii from "./Lessonkisii"
+import Lessonmasai from "./Lessonmasai"
 function Router(){
     return(
         <>
@@ -13,9 +19,15 @@ function Router(){
     <Route path="/lessons" element={<Layout><Lessonpage/></Layout>}/>
     <Route path="/admin" element={<Layout><Adminpannel/></Layout>}/>
     <Route path="/login&r" element={<Layout><Authentications/></Layout>}/>
-    <Route path="/landing" element={<Layout><Landingpage/></Layout>}/>
+    <Route path="/" element={<Layout><Landingpage/></Layout>}/>
     <Route path="/paid" element={<Layout><Payment/></Layout>}/>
-   
+    <Route path="/lesson" element={<Layout><Lesson/></Layout>}/>
+    <Route path="/lessonss" element={<Layout><Lessonkamba/></Layout>}/>
+    <Route path="/lesso" element={<Layout><Lessonkikuyu/></Layout>}/>
+    <Route path="/less" element={<Layout><Lessonkisii/></Layout>}/>
+    <Route path="/les" element={<Layout><Lessonnubian/></Layout>}/>
+    <Route path="/len" element={<Layout><Lessonmasai/></Layout>}/>
+
 </Routes>
 </BrowserRouter>
 
