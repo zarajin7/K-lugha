@@ -7,4 +7,4 @@ return(
 )
 
 }
-export default Forms
+export default Form

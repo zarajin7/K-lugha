@@ -48,14 +48,24 @@ function Adminpannel() {
     getAllClasses(); 
   };
 
-  const handleDeleteClass = async (classId) => {
-    await deleteDoc(doc(db, "classes", classId));
-    getAllClasses();
-  };
+  // const handleDeleteClass = async (classId) => {
+  //   await deleteDoc(doc(db, "classes", classId));
+  //   getAllClasses();
+  // };
 
   return (
     <>
+    
       <div className="Container mx-auto">
+      <div>
+        <ul className="flex justify-around ">
+          <li className=" hover:bg-green-900">Dashboard</li>
+          <li className=" hover:bg-green-900">Lessons</li>
+          <li className=" hover:bg-green-900">settings</li>
+          <li className=" hover:bg-red-900">log-out</li>
+          </ul>
+
+      </div>
         <div className="bg-gradient-to-r from-red-900 from-10% via-green-900 via-30% to-red-900 to -50% ...h-100px w-100px px-4">
           <h2 className="text-center text-2xl text-white">
             Welcome to K-languages a platform that provides a solution to
@@ -67,7 +77,7 @@ function Adminpannel() {
                 My Class
               </li>
 
-              <li className="border rounded-full px-2 hover:bg-red-700">
+              <li className="border rounded-full w-[25%] h-[25%]  px-2 hover:bg-red-700">
                 Welcome, Emmanuel
               </li>
             </ul>
@@ -77,22 +87,19 @@ function Adminpannel() {
             {allClasses.map((classItem, index) => (
               <div
                 key={index}
-                className="text-2xl text-center border shadow-transparent w-[200px] h-[200px] bg-white"
+                className="text-2xl border shadow-transparent w-[200px] h-[200px] bg-white"
               >
-                <input
-                  type="text"
-                  value={classItem.class}
-                  onChange={(e) =>
-                    handleEditClass(classItem.id, e.target.value)
-                  }
-                />
+                <h1>{classItem.class}</h1>
+                  
+                  
+                
                 
               <div>
               <button
               className="border rounded-full hover:bg-red-700 mt-10"
-              onClick={() => handleDeleteClass(classItem.id)}
+              onClick
             >
-              Delete
+              Add lessons
             </button>
             </div>
             </div>
@@ -126,7 +133,7 @@ function Adminpannel() {
         <button
           className="border rounded-full flex items-center mt-10 bg-red-300 py-5 w-[40%] mx-auto"
           onClick={handleAddClass}
-        ><h3 className=" flex px-14  itext-center">Add</h3>
+        ><h3 className=" flex px-10  text-center">Add</h3>
           
         </button>
       </AddClass>
