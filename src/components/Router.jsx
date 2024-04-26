@@ -6,7 +6,7 @@ import Authentications from "../pages/Authentications"
 import Landingpage from "../pages/Landingpage"
 import Payment from "../pages/Paymentpage"
 import Form from "../pages/Form"
-
+import Singleclass from "../pages/SingleClass"
 function Router(){
     return(
         <>
@@ -18,6 +18,7 @@ function Router(){
     <Route path="/landing" element={<Layout><Landingpage/></Layout>}/>
     <Route path="/paid" element={<Layout><Payment/></Layout>}/>
    <Route path="/form" element={<Layout><Form/></Layout>}/>
+   <Route path="/admin/lessons/:id" element={<Singleclass/>}/>
 </Routes>
 </BrowserRouter>
 
