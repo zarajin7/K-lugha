@@ -11,6 +11,7 @@ import Lessonnubian from "./Lessonnubian"
 import Lessonkikuyu from "./Lessonkikuyu"
 import Lessonkisii from "./Lessonkisii"
 import Lessonmasai from "./Lessonmasai"
+import Lessonpagespart from "../pages/Lesson-pages-part"
 
 function Router(){
     return(
@@ -28,6 +29,7 @@ function Router(){
     <Route path="/less" element={<Layout><Lessonkisii/></Layout>}/>
     <Route path="/les" element={<Layout><Lessonnubian/></Layout>}/>
     <Route path="/len" element={<Layout><Lessonmasai/></Layout>}/>
+    <Route path="/len" element={<Layout><Lessonpagespart/></Layout>}/>
 
 </Routes>
 </BrowserRouter>
