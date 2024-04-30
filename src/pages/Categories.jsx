@@ -4,6 +4,7 @@ function Categories(){
     return(
      <div>
         <Lesson/>
+        
      </div>
     )
 }
