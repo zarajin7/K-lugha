@@ -5,6 +5,10 @@ import Adminpannel from "../pages/Adminpannel"
 import Authentications from "../pages/Authentications"
 import Landingpage from "../pages/Landingpage"
 import Payment from "../pages/Paymentpage"
+ Manucho
+import Form from "../pages/Form"
+import Singleclass from "../pages/SingleClass"
+
 import Lesson from "./Lesson"
 import Lessonkamba from "./Lessonkamba"
 import Lessonnubian from "./Lessonnubian"
@@ -12,6 +16,7 @@ import Lessonkikuyu from "./Lessonkikuyu"
 import Lessonkisii from "./Lessonkisii"
 import Lessonmasai from "./Lessonmasai"
 
+ development
 function Router(){
     return(
         <>
@@ -22,6 +27,9 @@ function Router(){
     <Route path="/login&r" element={<Layout><Authentications/></Layout>}/>
     <Route path="/" element={<Layout><Landingpage/></Layout>}/>
     <Route path="/paid" element={<Layout><Payment/></Layout>}/>
+ Manucho
+   <Route path="/form" element={<Layout><Form/></Layout>}/>
+   <Route path="/admin/lessons/:id" element={<Singleclass/>}/>
     <Route path="/lesson" element={<Layout><Lesson/></Layout>}/>
     <Route path="/lessonss" element={<Layout><Lessonkamba/></Layout>}/>
     <Route path="/lesso" element={<Layout><Lessonkikuyu/></Layout>}/>
@@ -29,6 +37,7 @@ function Router(){
     <Route path="/les" element={<Layout><Lessonnubian/></Layout>}/>
     <Route path="/len" element={<Layout><Lessonmasai/></Layout>}/>
 
+ development
 </Routes>
 </BrowserRouter>
 
