@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Lesson2 from "../components/Lesson2";
 import AddClass from "../components/AddClass";
-import addLessons from "../components/addLessons";
+
 import {
   collection,
   addDoc,
@@ -60,7 +60,7 @@ function Adminpannel() {
   function handleAddLessons(path,options){
   navigate(path,options)
   setOpenModal(true)
-  // handleAddLessons()
+  
 }
 
 
@@ -85,12 +85,12 @@ function Adminpannel() {
             literacy of kenyans wide variety of Languages this includes;
           </h2>
           <div>
-            <ul className="flex justify-evenly list-none text-white font-bold cursor-pointer">
-              <li className="border rounded-full px-2 hover:bg-red-700">
+            <ul className="flex justify-evenly items-center  list-none text-white font-bold cursor-pointer">
+              <li className="border  w-[150px] h-[150px] text-center hover:bg-red-700">
                 My Class
               </li>
 
-              <li className="border rounded-full w-[25%] h-[25%]  px-2 hover:bg-red-700">
+              <li className="border  w-[150px] h-[150px] text-center px-2 hover:bg-red-700">
                 Welcome, Emmanuel
               </li>
             </ul>
@@ -147,27 +147,7 @@ function Adminpannel() {
             <h3 className=" flex px-10  text-center">Add</h3>
           </button>
         </AddClass>
-        <div className="p-[10em] gap-5">
-        <addLessons isOpen={openModal} onClose={handleClose}>
-          <h3 className="text-2xl font-semibold bg-gray-400"></h3>
-          <input
-            type="text"
-            name="class"
-            placeholder="Class Name"
-            className="py-5 border m-10 px-3 "
-            value={classInput.class}
-            onChange={(e) =>
-              setClassInput({ ...classInput, class: e.target.value })
-            }
-          />
-          <button
-            className="border rounded-full flex items-center mt-10 bg-red-300 py-5 w-[40%] mx-auto"
-            onClick={handleAddLessons}
-          >
-            <h3 className=" flex px-10  text-center">Add</h3>
-          </button>
-        </addLessons>
-      </div>
+       
 
 
 

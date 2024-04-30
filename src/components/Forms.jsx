@@ -13,31 +13,6 @@ function forms(){
             </div>
 
 
-            {/* <div>
-            <label>class number</label>
-            <input  className="border border-black" type="number" placeholder="number"/>
-           </div>
-           </div>
-            <h2 className="text-2xl ">Category</h2>
-
-            <h3>Basic</h3>
-            <input className="py-2" type="checkbox" placeholder="level"/>
-            <div className="flex">
-                <div>
-            <p>Lesson 1</p>            <input type="checkbox" placeholder="level"/>
-<p>lesson2</p>            <input type="checkbox" placeholder="level"/>
-<p>lesson3</p>            <input type="checkbox" placeholder="level"/>
-<p>lesson4</p>            <input type="checkbox" placeholder="level"/>
-<p>lesson5</p>             <input type="checkbox" placeholder="level"/>
-</div>
-<div>
-<p>lesson6</p>             <input type="checkbox" placeholder="level"/>
-<p>lesson7</p>             <input type="checkbox" placeholder="level"/>
-<p>lesson8</p>             <input type="checkbox" placeholder="level"/>
-<p>lesson9</p>             <input type="checkbox" placeholder="level"/>
-<p>lesson10</p>             <input type="checkbox" placeholder="level"/>
-</div>
-</div> */}
 </form>
 
 <button className="border 2px solid grey">Create lesson</button>
