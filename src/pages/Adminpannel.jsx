@@ -79,7 +79,7 @@ function Adminpannel() {
           </h2>
           <div>
             <ul className="flex justify-evenly items-center  list-none text-white font-bold cursor-pointer">
-              <li className="border  w-[150px] h-[150px] text-center hover:bg-red-700">
+              <li className="border  w-[150px] h-[150px] hover:bg-red-700">
                 My Class
               </li>
 
