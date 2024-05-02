@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { IoPersonSharp } from "react-icons/io5";
 import { auth,db } from "../firebase";
+import { RotatingLines } from "react-loader-spinner";
+import Loader from "./Loader";
 import {
   createUserWithEmailAndPassword,signInWithEmailAndPassword
 } from "firebase/auth";
@@ -16,7 +18,7 @@ function Authentication() {
   });
   
   const [confirmPassword, setConfirmPassword] = useState("");
-
+   const [loading,setLoading]=useState(false)
   function toggleForm(formName) {
     setShowForm(formName);
   }
@@ -47,6 +49,7 @@ function Authentication() {
       setShowError("password should have at least 6 characters")
     }
     else {
+      setLoading(true)
       await createUserWithEmailAndPassword(
         auth,
         formDataSignUp.email,
@@ -57,6 +60,8 @@ function Authentication() {
           const user = userCredential.user;
           console.log("Registered successfully");
           console.log(user);
+          setLoading(false)
+        
           if (user){
             const saveUsers=await addDoc(collection(db, "users"), formDataSignUp)
             console.log(saveUsers)
@@ -145,6 +150,7 @@ const handleLogin = async (e) => {
   return (
     <>
       <div className="container mx-auto">
+        { loading && <Loader/>}
         <div className="flex justify-center gap-3">
           <p
             className="py-3 px-5 bg-slate-300 text-black cursor-pointer"
