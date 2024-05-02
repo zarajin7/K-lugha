@@ -5,7 +5,7 @@ import Adminpannel from "../pages/Adminpannel"
 import Authentications from "../pages/Authentications"
 import Landingpage from "../pages/Landingpage"
 import Payment from "../pages/Paymentpage"
- Manucho
+ 
 import Form from "../pages/Form"
 import Singleclass from "../pages/SingleClass"
 
@@ -17,7 +17,7 @@ import Lessonkisii from "./Lessonkisii"
 import Lessonmasai from "./Lessonmasai"
 import Lessonpagespart from "../pages/Lesson-pages-part"
 
- development
+
 function Router(){
     return(
         <>
@@ -28,7 +28,7 @@ function Router(){
     <Route path="/login&r" element={<Layout><Authentications/></Layout>}/>
     <Route path="/" element={<Layout><Landingpage/></Layout>}/>
     <Route path="/paid" element={<Layout><Payment/></Layout>}/>
- Manucho
+
    <Route path="/form" element={<Layout><Form/></Layout>}/>
    <Route path="/admin/lessons/:id" element={<Singleclass/>}/>
     <Route path="/lesson" element={<Layout><Lesson/></Layout>}/>
@@ -39,7 +39,7 @@ function Router(){
     <Route path="/len" element={<Layout><Lessonmasai/></Layout>}/>
     <Route path="/len" element={<Layout><Lessonpagespart/></Layout>}/>
 
- development
+
 </Routes>
 </BrowserRouter>
 
