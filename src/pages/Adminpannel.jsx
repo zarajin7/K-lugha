@@ -71,14 +71,7 @@ function Adminpannel() {
   return (
     <>
       <div className="Container mx-auto">
-        <div>
-          <ul className="flex justify-around ">
-            <li className=" hover:bg-green-900">Dashboard</li>
-            <li className=" hover:bg-green-900">Lessons</li>
-            <li className=" hover:bg-green-900">settings</li>
-            <li className=" hover:bg-red-900">log-out</li>
-          </ul>
-        </div>
+    
         <div className="bg-gradient-to-r from-red-900 from-10% via-green-900 via-30% to-red-900 to -50% ...h-100px w-100px px-4">
           <h2 className="text-center text-2xl text-white">
             Welcome to K-languages a platform that provides a solution to
