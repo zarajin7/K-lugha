@@ -6,7 +6,7 @@ import {
   addDoc,
   getDocs,
 } from "firebase/firestore";
-import { db } from "../firebaseConfig";
+import { db } from "../firebase";
 
 function Singleclass() {
   const { state } = useLocation();
