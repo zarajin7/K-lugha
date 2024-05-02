@@ -27,7 +27,7 @@ function Router(){
     <Route path="/login&r" element={<Layout><Authentications/></Layout>}/>
     <Route path="/" element={<Layout><Landingpage/></Layout>}/>
     <Route path="/paid" element={<Layout><Payment/></Layout>}/>
- Manucho
+ 
    <Route path="/form" element={<Layout><Form/></Layout>}/>
    <Route path="/admin/lessons/:id" element={<Singleclass/>}/>
     <Route path="/lesson" element={<Layout><Lesson/></Layout>}/>
@@ -37,7 +37,7 @@ function Router(){
     <Route path="/les" element={<Layout><Lessonnubian/></Layout>}/>
     <Route path="/len" element={<Layout><Lessonmasai/></Layout>}/>
 
- development
+ 
 </Routes>
 </BrowserRouter>
 
