@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { IoPersonSharp } from "react-icons/io5";
+
 import { auth,db } from "../firebase";
 import { RotatingLines } from "react-loader-spinner";
 import Loader from "./Loader";
