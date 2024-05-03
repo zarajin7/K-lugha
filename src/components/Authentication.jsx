@@ -284,7 +284,7 @@ const handleLogin = async (e) => {
 
               <div className="flex justify-center  text-[20px] my-2">
                 Dont Have An Account Yet?
-                <a href="/signup" className="text-red-300">
+                <a href="/lesson" className="text-red-300">
                   Sign Up Free
                 </a>
               </div>

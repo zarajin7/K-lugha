@@ -35,7 +35,7 @@ function Herosections() {
             <div>
               <p className="w-[300px] text-center leading-[2rem]">
                 Using this app was so much intresting .i did not expect that
-                much from the site interacting with you was so much awosome
+                much from the site interacting with you was so much awesome
               </p>
             </div>
           </div>
