@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 async function handleAudio() {
   const url =
-    "http://api.voicerss.org/?key=c6c62d5c4548485dbe4407f481ce44c6&hl=en-us&src=Hello, world!";
+    
 
   await fetch(url).catch((err) => console.error(err));
 }
@@ -10,7 +10,7 @@ async function handleAudio() {
 function Lessons() {
   return (
     <>
-      <audio controls src="https://api.voicerss.org/?key=c6c62d5c4548485dbe4407f481ce44c6&hl=en-us&src= bedgi hawi maber"></audio>
+     
       <div className=" grid grid-cols-3 gap-3 sm:flex-row">
         <div className="w-[350px] m-[30px] rounded-lg px-[40px] bg-gradient-to-r from-neutral-950 via-red-950 to-green-950 h-[350px]">
           <div></div>
